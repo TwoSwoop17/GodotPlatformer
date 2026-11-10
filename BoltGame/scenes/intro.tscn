@@ -1,0 +1,74 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/story_screen.gd" id="1_story"]
+[ext_resource type="LabelSettings" path="res://ui/label_small.tres" id="2_small"]
+[ext_resource type="LabelSettings" path="res://ui/label_title.tres" id="3_title"]
+[ext_resource type="Texture2D" path="res://assets/lighthouse.png" id="4_lighthouse"]
+[ext_resource type="Texture2D" path="res://assets/house.png" id="5_house"]
+[ext_resource type="Texture2D" path="res://assets/player_small.png" id="6_bolt"]
+[ext_resource type="Texture2D" path="res://assets/baron.png" id="7_baron"]
+[ext_resource type="Texture2D" path="res://assets/sun_core.png" id="8_core"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_story")
+lines = PackedStringArray("The robot town of Cogsworth gets all of its power from the Great Lighthouse.", "But tonight the Rust Baron stole the lighthouse's Sun Core! Now the whole town is going dark.", "BOLT: Don't worry, everyone. I'll chase him to his outpost and bring the Sun Core home!", "Collect gears, stomp Rustbugs and reach the outpost.\nArrows: move    Space: jump    Shift: run")
+next_scene = "res://scenes/world_card.tscn"
+start_new_game = true
+
+[node name="Sky" type="ColorRect" parent="."]
+offset_right = 256.0
+offset_bottom = 150.0
+color = Color(0.08, 0.1, 0.25, 1)
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_top = 150.0
+offset_right = 256.0
+offset_bottom = 240.0
+color = Color(0.2, 0.35, 0.25, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_top = 10.0
+offset_right = 256.0
+offset_bottom = 46.0
+text = "BOLT and the Dark Lighthouse"
+label_settings = ExtResource("3_title")
+horizontal_alignment = 1
+
+[node name="House" type="Sprite2D" parent="."]
+position = Vector2(40, 134)
+texture = ExtResource("5_house")
+
+[node name="Lighthouse" type="Sprite2D" parent="."]
+position = Vector2(150, 102)
+texture = ExtResource("4_lighthouse")
+hframes = 2
+
+[node name="Bolt" type="Sprite2D" parent="."]
+position = Vector2(90, 142)
+texture = ExtResource("6_bolt")
+hframes = 5
+
+[node name="Baron" type="Sprite2D" parent="."]
+position = Vector2(215, 134)
+texture = ExtResource("7_baron")
+
+[node name="SunCore" type="Sprite2D" parent="."]
+position = Vector2(215, 112)
+texture = ExtResource("8_core")
+
+[node name="StoryText" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 164.0
+offset_right = 244.0
+offset_bottom = 214.0
+text = "Story text goes here."
+label_settings = ExtResource("2_small")
+autowrap_mode = 3
+
+[node name="Hint" type="Label" parent="."]
+offset_top = 222.0
+offset_right = 250.0
+offset_bottom = 234.0
+text = "Press SPACE"
+label_settings = ExtResource("2_small")
+horizontal_alignment = 2

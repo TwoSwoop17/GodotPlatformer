@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dleaeuputygj3"]
+
+[ext_resource type="Script" uid="uid://cqqgkjoi6cmp4" path="res://scripts/hud.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ckr7cx0w5ss8h" path="res://assets/player_small.png" id="2_player"]
+[ext_resource type="Texture2D" uid="uid://bnuubhws17ail" path="res://assets/items.png" id="3_items"]
+[ext_resource type="LabelSettings" path="res://ui/label_small.tres" id="4_label"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_life"]
+atlas = ExtResource("2_player")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gear"]
+atlas = ExtResource("3_items")
+region = Rect2(0, 0, 16, 16)
+
+[node name="HUD" type="CanvasLayer" unique_id=193000787]
+layer = 10
+script = ExtResource("1_script")
+
+[node name="LivesIcon" type="TextureRect" parent="." unique_id=755848851]
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 22.0
+offset_bottom = 20.0
+texture = SubResource("AtlasTexture_life")
+
+[node name="LivesLabel" type="Label" parent="." unique_id=1831657941]
+offset_left = 24.0
+offset_top = 6.0
+offset_right = 64.0
+offset_bottom = 18.0
+text = "x 3"
+label_settings = ExtResource("4_label")
+
+[node name="GearIcon" type="TextureRect" parent="." unique_id=604645116]
+offset_left = 6.0
+offset_top = 20.0
+offset_right = 22.0
+offset_bottom = 36.0
+texture = SubResource("AtlasTexture_gear")
+
+[node name="GearLabel" type="Label" parent="." unique_id=1022514268]
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 64.0
+offset_bottom = 34.0
+text = "x 00"
+label_settings = ExtResource("4_label")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1968014149]
+offset_left = 88.0
+offset_top = 6.0
+offset_right = 148.0
+offset_bottom = 30.0
+text = "SCORE
+000000"
+label_settings = ExtResource("4_label")
+horizontal_alignment = 1
+
+[node name="WorldLabel" type="Label" parent="." unique_id=1504287320]
+offset_left = 150.0
+offset_top = 6.0
+offset_right = 200.0
+offset_bottom = 30.0
+text = "WORLD
+1-1"
+label_settings = ExtResource("4_label")
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="." unique_id=217407292]
+offset_left = 204.0
+offset_top = 6.0
+offset_right = 250.0
+offset_bottom = 30.0
+text = "TIME
+400"
+label_settings = ExtResource("4_label")
+horizontal_alignment = 1
